@@ -10,9 +10,6 @@
 
 ###基础使用Demo：
 
-####Style = .Pattern类型
-动画内容为火柴棒组成的图案
-
 ```
 let paperShredder  = FNPaperShredder.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
 view.addSubview(paperShredder)
