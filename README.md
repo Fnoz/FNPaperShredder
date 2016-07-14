@@ -1,5 +1,5 @@
 # FNPaperShredder
-超酷的碎纸机动画：包含2种模式：纸条和纸片；
+Swift实现的超酷的碎纸机动画：包含2种模式：纸条和纸片；
 
 点子来源于[这里](http://www.zcool.com.cn/work/ZMTcwNDgxMzY=.html)，不过增加了一种模式。
 
