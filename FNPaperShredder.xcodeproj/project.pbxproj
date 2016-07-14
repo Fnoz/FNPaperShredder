@@ -12,6 +12,9 @@
 		10B187331D37C01200F00978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B187311D37C01200F00978 /* Main.storyboard */; };
 		10B187351D37C01200F00978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B187341D37C01200F00978 /* Assets.xcassets */; };
 		10B187381D37C01200F00978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B187361D37C01200F00978 /* LaunchScreen.storyboard */; };
+		10B187411D37C04700F00978 /* FNPaperShredder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B187401D37C04700F00978 /* FNPaperShredder.swift */; };
+		10B187431D37C72F00F00978 /* FNGrayPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B187421D37C72F00F00978 /* FNGrayPart.swift */; };
+		10B187451D37D3AD00F00978 /* FNPaperBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B187441D37D3AD00F00978 /* FNPaperBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		10B187341D37C01200F00978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10B187371D37C01200F00978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10B187391D37C01200F00978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10B187401D37C04700F00978 /* FNPaperShredder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNPaperShredder.swift; sourceTree = "<group>"; };
+		10B187421D37C72F00F00978 /* FNGrayPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNGrayPart.swift; sourceTree = "<group>"; };
+		10B187441D37D3AD00F00978 /* FNPaperBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNPaperBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +60,23 @@
 		10B1872C1D37C01200F00978 /* FNPaperShredder */ = {
 			isa = PBXGroup;
 			children = (
+				10B1873F1D37C03700F00978 /* FNPaperShredder */,
 				10B1872D1D37C01200F00978 /* AppDelegate.swift */,
 				10B1872F1D37C01200F00978 /* ViewController.swift */,
 				10B187311D37C01200F00978 /* Main.storyboard */,
 				10B187341D37C01200F00978 /* Assets.xcassets */,
 				10B187361D37C01200F00978 /* LaunchScreen.storyboard */,
 				10B187391D37C01200F00978 /* Info.plist */,
+			);
+			path = FNPaperShredder;
+			sourceTree = "<group>";
+		};
+		10B1873F1D37C03700F00978 /* FNPaperShredder */ = {
+			isa = PBXGroup;
+			children = (
+				10B187401D37C04700F00978 /* FNPaperShredder.swift */,
+				10B187421D37C72F00F00978 /* FNGrayPart.swift */,
+				10B187441D37D3AD00F00978 /* FNPaperBar.swift */,
 			);
 			path = FNPaperShredder;
 			sourceTree = "<group>";
@@ -135,6 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B187411D37C04700F00978 /* FNPaperShredder.swift in Sources */,
+				10B187431D37C72F00F00978 /* FNGrayPart.swift in Sources */,
+				10B187451D37D3AD00F00978 /* FNPaperBar.swift in Sources */,
 				10B187301D37C01200F00978 /* ViewController.swift in Sources */,
 				10B1872E1D37C01200F00978 /* AppDelegate.swift in Sources */,
 			);
