@@ -14,6 +14,8 @@
 let paperShredder  = FNPaperShredder.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
 view.addSubview(paperShredder)
 paperShredder.type = .Bar
+//开始裁纸
 paperShredder.start()
+//恢复原状
 paperShredder.reset(true)
 ```
