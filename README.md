@@ -6,7 +6,7 @@
 实际效果很流畅，GIF有点卡。
 
 ![Animating](readme_images/0.gif)
-![Animating](readme_images/01.gif)
+![Animating](readme_images/1.gif)
 
 ###基础使用Demo：
 
