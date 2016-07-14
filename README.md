@@ -19,3 +19,5 @@ paperShredder.start()
 //恢复原状
 paperShredder.reset(true)
 ```
+
+###玩玩，懒得弄Pod~
