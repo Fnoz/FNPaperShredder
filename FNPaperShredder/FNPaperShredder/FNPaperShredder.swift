@@ -8,9 +8,16 @@
 
 import UIKit
 
+enum FNPaperShredderMode:NSInteger{
+    case Bar = 0
+    case Piece = 1
+}
+
 class FNPaperShredder: UIView {
     var paper:UIView!
+    var paperPieceFaller:UIView!
     var bars:NSMutableArray!
+    var mode:FNPaperShredderMode = .Bar
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,6 +38,9 @@ class FNPaperShredder: UIView {
             addSubview(paperBar)
             bars.addObject(paperBar)
         }
+        
+        paperPieceFaller = UIView.init(frame: CGRect.init(x: (frame.width - 126) / 2, y: 110, width: 126, height: 5))
+        addSubview(paperPieceFaller)
         
         let darkRedPart = UIView.init(frame: CGRect.init(x: (frame.width - 176) / 2, y: 110, width: 176, height: 36))
         darkRedPart.layer.cornerRadius = 15
@@ -58,40 +68,59 @@ class FNPaperShredder: UIView {
     }
     
     func start() {
-        UIView.animateWithDuration(2) { 
+        UIView.animateWithDuration(2) {
             self.paper.frame = CGRect.init(x: (self.frame.width - 146) / 2, y: 35, width: 146, height: 75)
         }
-        for item in bars {
-            UIView.animateWithDuration(2, animations: {
-                let paperBar = item as! FNPaperBar
-                paperBar.start()
-                paperBar.frame = CGRect.init(x: paperBar.frame.origin.x, y: 146, width: paperBar.frame.width, height: paperBar.frame.height)
-            })
+        switch mode {
+        case .Bar:
+            for item in bars {
+                UIView.animateWithDuration(2, animations: {
+                    let paperBar = item as! FNPaperBar
+                    paperBar.start()
+                    paperBar.frame = CGRect.init(x: paperBar.frame.origin.x, y: 146, width: paperBar.frame.width, height: paperBar.frame.height)
+                })
+            }
+        default:
+            let delayInSeconds = 0.5
+            let popTime = dispatch_time(DISPATCH_TIME_NOW,
+                                        Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+            dispatch_after(popTime, dispatch_get_main_queue()) {
+                self.paperPieceFaller.fn_fallPaperPiece()
+            }
         }
     }
     
     func reset(animate:Bool) {
-        for item in bars {
-            let paperBar = item as! FNPaperBar
-            paperBar.reset()
-        }
         if animate {
             UIView.animateWithDuration(2) {
                 self.paper.frame = CGRect.init(x: (self.frame.width - 146) / 2, y: 0, width: 146, height: 75)
             }
-            for item in bars {
-                UIView.animateWithDuration(2, animations: {
-                    let paperBar = item as! FNPaperBar
-                    paperBar.frame = CGRect.init(x: paperBar.frame.origin.x, y: 146 - 50, width: paperBar.frame.width, height: paperBar.frame.height)
-                })
-            }
         }
         else {
             self.paper.frame = CGRect.init(x: (self.frame.width - 146) / 2, y: 0, width: 146, height: 75)
+        }
+        switch mode {
+        case .Bar:
             for item in bars {
                 let paperBar = item as! FNPaperBar
-                paperBar.frame = CGRect.init(x: paperBar.frame.origin.x, y: 146 - 50, width: paperBar.frame.width, height: paperBar.frame.height)
+                paperBar.reset()
             }
+            if animate {
+                for item in bars {
+                    UIView.animateWithDuration(2, animations: {
+                        let paperBar = item as! FNPaperBar
+                        paperBar.frame = CGRect.init(x: paperBar.frame.origin.x, y: 146 - 50, width: paperBar.frame.width, height: paperBar.frame.height)
+                    })
+                }
+            }
+            else {
+                for item in bars {
+                    let paperBar = item as! FNPaperBar
+                    paperBar.frame = CGRect.init(x: paperBar.frame.origin.x, y: 146 - 50, width: paperBar.frame.width, height: paperBar.frame.height)
+                }
+            }
+        default:
+            let i = 0
         }
     }
     
